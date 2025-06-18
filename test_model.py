@@ -1,5 +1,4 @@
-#!/usr/bin/env python
-# coding: utf-8
+
 
 # In[48]:
 
@@ -52,7 +51,8 @@ def extract_mfcc_for_test(file_path, sr=SAMPLE_RATE, duration=DURATION, max_pad_
 
     return mfcc_norm
 def predict_emotion(audio_path):
-    mfcc_norm = extract_mfcc_for_test(audio_path)
+    mfcc = extract_mfcc_for_test(audio_path)
+    mfcc_norm = mfcc / np.max(np.abs(mfcc))
     input_tensor = np.expand_dims(mfcc_norm, axis=-1)  
     input_tensor = np.expand_dims(input_tensor, axis=0)  
 
@@ -74,7 +74,7 @@ def predict_emotion(audio_path):
     plt.tight_layout()
     plt.show()
 
-test_file = "../data/Audio_Speech_Actors_01_24/Actor_01/03-01-01-01-01-01-01.wav"
+test_file = "../data/Audio_Speech_Actors_01_24/Actor_01/03-01-01-01-01-01-01.wav"  #replace with ur audio file to test the model
 predict_emotion(test_file)
 
 
