@@ -55,7 +55,8 @@ def extract_mfcc(file_path):
 
 # Predict Emotion
 def predict_emotion(audio_path, model, index_to_emotion):
-    mfcc_norm = extract_mfcc(audio_path)
+    mfcc = extract_mfcc_for_test(audio_path)
+    mfcc_norm = mfcc / np.max(np.abs(mfcc))
     input_tensor = np.expand_dims(mfcc_norm, axis=-1)
     input_tensor = np.expand_dims(input_tensor, axis=0)
 
@@ -103,15 +104,6 @@ if uploaded_file is not None:
 # In[5]:
 
 
-import os
-import streamlit as st
-
-st.write("Current Working Directory:", os.getcwd())
-st.write("Contents:", os.listdir())
-
-
-
-# In[ ]:
 
 
 
