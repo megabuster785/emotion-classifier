@@ -57,6 +57,7 @@ Printed at the end of training to show precision, recall, F1-score for each clas
 Classification Report:
 
             precision    recall  f1-score   support
+  
   angry       0.89      0.95      0.92       301
   calm        0.87      0.93      0.90       301
   disgust     0.87      0.87      0.87       154
