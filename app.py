@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[8]:
-
-
 import streamlit as st
 import numpy as np
 import librosa
@@ -20,8 +14,8 @@ SAMPLE_RATE = 22050
 DURATION = 3
 MAX_PAD_LEN = 130
 N_MFCC = 40
-MODEL_PATH = "models/cnn_emotion_model.h5"
-ENCODER_PATH = "models/label_encoder.pkl"
+MODEL_PATH = "cnn_emotion_model.h5"
+ENCODER_PATH = "label_encoder.pkl"
 
 # Emotion ID to Label Mapping
 emotion_map = {
