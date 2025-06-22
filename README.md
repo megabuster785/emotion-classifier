@@ -89,6 +89,7 @@ Large Feature File: cnn_features_augmented.npz is not included due to size. You 
 you have to set the file path correctly in extract_cnn_features file.
 
 to do the testing:-
+**before running test model first run features extraction**
 Run test_model.py 
 Note:- add ur .wav file in the path file to test the model
 
