@@ -92,13 +92,6 @@ if uploaded_file is not None:
         eid, label = index_to_emotion[i]
         st.write(f"Class {i}: Emotion ID {eid} → **{label.upper()}** → {prob*100:.2f}%")
 
-    # Display MFCC heatmap
-    st.markdown("### MFCC Spectrogram")
-    fig, ax = plt.subplots(figsize=(10, 4))
-    librosa.display.specshow(mfcc, x_axis='time')
-    plt.colorbar()
-    plt.title('MFCC')
-    st.pyplot(fig)
 
 
 # In[5]:
